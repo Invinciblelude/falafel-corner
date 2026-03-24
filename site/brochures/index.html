@@ -6,8 +6,22 @@
   <title>Fuel Program brochures — Falafel Corner Marconi</title>
   <link rel="stylesheet" href="brochure.css">
   <style>
-    body { padding: 2rem 1rem; }
-    .hub { max-width: 40rem; margin: 0 auto; background: #fff; padding: 1.75rem; border-radius: 8px; box-shadow: 0 4px 24px rgba(15,23,42,0.08); }
+    html { scroll-behavior: smooth; }
+    body {
+      padding: 2rem 1rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .hub {
+      max-width: 40rem;
+      margin: 0 auto;
+      background: #fff;
+      padding: 1.75rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 24px rgba(15,23,42,0.08);
+      transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .hub:hover { box-shadow: 0 8px 32px rgba(15,23,42,0.1); }
     .hub h1 { font-size: 1.35rem; margin-bottom: 0.5rem; }
     .hub p { color: var(--fc-muted); font-size: 0.9rem; margin-bottom: 1.25rem; }
     .hub ul { list-style: none; }
@@ -21,9 +35,35 @@
       color: var(--fc-ink);
       font-weight: 600;
       text-decoration: none;
+      transition:
+        border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+        background 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .hub a:hover { border-color: var(--fc-red); color: var(--fc-red); }
-    .hub a small { display: block; font-weight: 400; color: var(--fc-muted); font-size: 0.8rem; margin-top: 0.2rem; }
+    .hub a:hover {
+      border-color: var(--fc-red);
+      color: var(--fc-red);
+      background: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+    }
+    .hub a:active { transform: translateY(0); }
+    .hub a:focus-visible { outline: 2px solid var(--fc-red); outline-offset: 2px; }
+    .hub a small { display: block; font-weight: 400; color: var(--fc-muted); font-size: 0.8rem; margin-top: 0.2rem; transition: color 0.28s ease; }
+    .hub a:hover small { color: var(--fc-muted); }
+    p[style*="margin-bottom:0"] a {
+      transition: color 0.28s ease, opacity 0.28s ease;
+    }
+    p[style*="margin-bottom:0"] a:hover { opacity: 0.85; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hub, .hub a, p[style*="margin-bottom:0"] a {
+        transition: none !important;
+      }
+      .hub a:hover { transform: none; }
+    }
   </style>
 </head>
 <body>
