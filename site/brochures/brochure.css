@@ -224,44 +224,224 @@ h1 {
   .plate-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/*
+ * Loyalty + coupon — single professional system (print-style):
+ * clear hierarchy, one accent (brand red), uniform spacing, dashed redeem panel.
+ */
 .promo-loyalty {
+  --promo-space: 0.45rem;
+  --promo-space-lg: 0.65rem;
   margin-top: 0.65rem;
-  padding: 0.55rem 0.65rem 0.6rem;
-  background: linear-gradient(135deg, #fff5f2 0%, #ffe8e0 50%, #fff8f5 100%);
-  border: 2px dashed var(--fc-red);
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--fc-line);
   border-radius: 8px;
+  border-top: 3px solid var(--fc-red);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
   font-size: 0.72rem;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
-.promo-loyalty h2 {
-  font-size: 0.68rem;
+.promo-head {
+  padding: var(--promo-space-lg) var(--promo-space-lg) var(--promo-space);
+  border-bottom: 1px solid var(--fc-line);
+  background: #f8fafc;
+}
+
+.promo-head-title {
+  margin: 0 0 0.35rem;
+  font-size: 0.66rem;
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: var(--fc-red);
-  margin-bottom: 0.4rem;
+  color: var(--fc-ink);
+  text-align: center;
+  line-height: 1.2;
 }
 
-.promo-loyalty ol {
-  margin: 0;
-  padding-left: 1.15rem;
+.promo-head-dek {
+  margin: 0 auto;
+  max-width: 34rem;
+  font-size: 0.61rem;
+  font-weight: 500;
+  color: var(--fc-muted);
+  text-align: center;
+  line-height: 1.45;
+}
+
+.promo-head-dek strong {
+  font-weight: 700;
   color: var(--fc-ink);
 }
 
-.promo-loyalty li {
-  margin-bottom: 0.2rem;
-  font-weight: 600;
+.promo-body {
+  padding: var(--promo-space-lg);
+  background: #fff;
 }
 
-.promo-loyalty li strong { color: var(--fc-red); }
+.promo-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(4.85rem, 5.65rem);
+  gap: var(--promo-space-lg);
+  align-items: start;
+}
 
-.promo-loyalty .promo-fine {
-  margin-top: 0.45rem;
-  font-size: 0.58rem;
+.promo-tiers-label {
+  margin: 0 0 var(--promo-space);
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fc-muted);
+}
+
+.promo-tier-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--fc-line);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.promo-tier-list li {
+  display: grid;
+  grid-template-columns: 1.25rem 1fr;
+  gap: 0.4rem;
+  align-items: baseline;
+  padding: 0.34rem 0.42rem;
+  border-bottom: 1px solid var(--fc-line);
+  font-size: 0.66rem;
   font-weight: 500;
+  color: var(--fc-ink);
+  line-height: 1.32;
+}
+
+.promo-tier-list li:last-child {
+  border-bottom: none;
+}
+
+.promo-tier-num {
+  font-size: 0.56rem;
+  font-weight: 800;
+  color: var(--fc-muted);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.promo-tier-copy strong {
+  font-weight: 800;
+  color: var(--fc-red);
+}
+
+/* Dashed “coupon” panel — code is the hero; QR secondary */
+.promo-redeem {
+  margin: 0;
+  padding: var(--promo-space) var(--promo-space) var(--promo-space-lg);
+  border: 2px dashed rgba(255, 48, 8, 0.32);
+  border-radius: 6px;
+  background: linear-gradient(180deg, #fffdfb 0%, #fff 55%);
+  text-align: center;
+}
+
+.promo-redeem-eyebrow {
+  margin: 0 0 0.18rem;
+  font-size: 0.48rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fc-muted);
+}
+
+.promo-redeem-code {
+  margin: 0 0 0.22rem;
+  font-family: ui-monospace, "SF Mono", Menlo, Monaco, monospace;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--fc-red);
+  line-height: 1.15;
+}
+
+.promo-redeem-note {
+  margin: 0 0 var(--promo-space);
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--fc-muted);
   line-height: 1.35;
+}
+
+.promo-redeem-qr {
+  margin: 0;
+}
+
+.promo-redeem-qr img {
+  display: block;
+  width: 100%;
+  max-width: 3.85rem;
+  height: auto;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border-radius: 4px;
+  border: 1px solid var(--fc-line);
+}
+
+.promo-redeem-qr figcaption {
+  margin: 0.22rem 0 0;
+  font-size: 0.44rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--fc-ink);
+}
+
+.promo-loyalty .promo-fine {
+  margin: 0;
+  padding: var(--promo-space-lg);
+  border-top: 1px solid var(--fc-line);
+  background: #f8fafc;
+  font-size: 0.54rem;
+  font-weight: 500;
+  color: var(--fc-muted);
+  line-height: 1.5;
+  text-align: left;
+}
+
+@media (max-width: 520px) {
+  .promo-grid {
+    grid-template-columns: 1fr;
+  }
+  .promo-redeem {
+    max-width: 10.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .promo-redeem-qr img {
+    max-width: 4.75rem;
+  }
+}
+
+@media print {
+  .promo-redeem-qr img {
+    width: 0.95in;
+    max-width: 0.95in;
+  }
+}
+
+.hub .promo-head-dek {
+  margin-bottom: 0;
+  font-size: 0.61rem;
+  color: var(--fc-muted);
+}
+
+.hub .promo-loyalty > .promo-fine {
+  margin-top: 0;
+  font-size: 0.54rem;
+  color: var(--fc-muted);
 }
 
 .price-block {
