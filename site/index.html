@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fuel Program — Halal Mediterranean group catering from the Falafel Corner Marconi flagship (4245 Marconi Ave). Same brand as 18 CA locations; this program serves Sacramento-area businesses from this kitchen.">
+  <title>Fuel Program · Halal catering · Falafel Corner Marconi</title>
+  <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dd-red: #FF3008;
+      --dd-red-dark: #d91400;
+      --charcoal: #0f172a;
+      --charcoal-soft: #1e293b;
+      --cream: #f8fafc;
+      --white: #ffffff;
+      --gray-muted: #475569;
+      --gray-border: #e2e8f0;
+      --text-xs: 0.8125rem;
+      --text-sm: 0.9375rem;
+      --text-base: 1.0625rem;
+      --text-lg: 1.125rem;
+      --text-xl: 1.25rem;
+      --text-2xl: 1.5rem;
+      --text-3xl: clamp(1.75rem, 4vw, 2.25rem);
+      --text-hero: clamp(2.25rem, 5vw, 3.25rem);
+      --space-section: 5.5rem;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: #f1f5f9;
+      color: var(--charcoal);
+      line-height: 1.6;
+      font-size: var(--text-base);
+      min-height: 100vh;
+    }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 1.75rem; }
+    
+    /* Nav */
+    .top-nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .top-nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      min-height: 5.5rem;
+      padding-top: 0.85rem;
+      padding-bottom: 0.85rem;
+    }
+    .logo-link { display: flex; align-items: center; }
+    .logo-link img {
+      height: clamp(4.5rem, 12vw, 6.75rem);
+      width: auto;
+      max-width: min(420px, 85vw);
+      object-fit: contain;
+      object-position: left center;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem 1.25rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav-links a:not(.order-btn) {
+      color: var(--charcoal);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: var(--text-sm);
+    }
+    .nav-links a:not(.order-btn):hover { color: var(--dd-red); }
+    .top-nav .order-btn {
+      background: var(--dd-red);
+      color: white !important;
+      padding: 0.65rem 1.25rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: var(--text-sm);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .top-nav .order-btn:hover { background: var(--dd-red-dark); }
+    
+    /* Hero */
+    .hero {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-border);
+      padding: 3.25rem 0 3.75rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr minmax(280px, 340px);
+      gap: 3rem 3.5rem;
+      align-items: start;
+    }
+    .hero-eyebrow {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dd-red);
+      margin-bottom: 0.75rem;
+    }
+    .hero h1 {
+      font-size: var(--text-hero);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      color: var(--charcoal);
+      margin-bottom: 1.25rem;
+      max-width: 16ch;
+    }
+    .hero-lead {
+      font-size: var(--text-lg);
+      color: var(--gray-muted);
+      max-width: 38rem;
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+    .hero-checks {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    .hero-checks li {
+      position: relative;
+      padding-left: 1.35rem;
+      margin-bottom: 0.5rem;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--charcoal);
+    }
+    .hero-checks li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.45em;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 2px;
+      background: var(--dd-red);
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      align-items: center;
+    }
+    .hero .cta-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 1.5rem;
+      background: var(--dd-red);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: var(--text-sm);
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .hero .cta-primary:hover { background: var(--dd-red-dark); }
+    .hero .cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 1.5rem;
+      background: transparent;
+      color: var(--charcoal);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: var(--text-sm);
+      border-radius: 6px;
+      border: 1px solid var(--gray-border);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .hero .cta-secondary:hover { border-color: var(--charcoal); background: var(--cream); }
+    .hero .cta-text {
+      color: var(--dd-red);
+      font-weight: 600;
+      font-size: var(--text-sm);
+      text-decoration: none;
+    }
+    .hero .cta-text:hover { text-decoration: underline; }
+    .hero-aside { display: flex; flex-direction: column; gap: 1rem; }
+    .hero-card {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.92);
+      padding: 1.5rem 1.5rem 1.35rem;
+      border-radius: 8px;
+    }
+    .hero-card h2 {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0.5rem;
+    }
+    .hero-card .hero-card-title { font-size: var(--text-lg); font-weight: 700; margin-bottom: 0.35rem; color: white; }
+    .hero-card p { font-size: var(--text-sm); line-height: 1.55; color: rgba(255,255,255,0.78); margin-bottom: 0.35rem; }
+    .hero-card .hero-hours { font-size: var(--text-xs); color: rgba(255,255,255,0.55); margin-bottom: 1rem; }
+    .hero-card-links { display: flex; flex-direction: column; gap: 0.5rem; }
+    .hero-card-links a {
+      display: block;
+      text-align: center;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .hero-card-links a:first-child {
+      background: var(--dd-red);
+      color: white;
+    }
+    .hero-card-links a:first-child:hover { background: var(--dd-red-dark); }
+    .hero-card-links a:last-child {
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .hero-card-links a:last-child:hover { background: rgba(255,255,255,0.15); }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      list-style: none;
+      padding: 1rem;
+      background: var(--cream);
+      border: 1px solid var(--gray-border);
+      border-radius: 8px;
+    }
+    .hero-stats li { text-align: center; }
+    .hero-stats strong {
+      display: block;
+      font-size: var(--text-xl);
+      font-weight: 800;
+      color: var(--dd-red);
+      line-height: 1.2;
+    }
+    .hero-stats span {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gray-muted);
+    }
+    
+    /* Credibility */
+    .who-section {
+      padding: var(--space-section) 0;
+      background: var(--cream);
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .who-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 2.5rem 3rem;
+      align-items: start;
+    }
+    .who-kicker {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dd-red);
+      margin-bottom: 0.65rem;
+    }
+    .who-headline {
+      font-size: var(--text-3xl);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+    .who-body {
+      font-size: var(--text-sm);
+      color: var(--gray-muted);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .who-body:last-of-type { margin-bottom: 0; }
+    .who-audiences {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--gray-border);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+    .diff-table-wrap {
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .diff-table-wrap h3 {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 1rem 1.25rem;
+      background: var(--charcoal);
+      color: white;
+    }
+    .diff-rows { display: grid; grid-template-columns: 1fr 1fr; }
+    .diff-col {
+      padding: 1.25rem 1.25rem 1.35rem;
+      border-right: 1px solid var(--gray-border);
+    }
+    .diff-col:last-child { border-right: none; }
+    .diff-col h4 {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+    .diff-col p { font-size: var(--text-xs); color: var(--gray-muted); line-height: 1.6; }
+    .trust-badges {
+      display: flex;
+      gap: 0;
+      margin-top: 2rem;
+      border: 1px solid var(--gray-border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--white);
+    }
+    .badge-item {
+      flex: 1;
+      text-align: center;
+      padding: 1.25rem 1rem;
+      border-right: 1px solid var(--gray-border);
+    }
+    .badge-item:last-child { border-right: none; }
+    .badge-number {
+      display: block;
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      color: var(--dd-red);
+      line-height: 1.2;
+    }
+    .badge-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--gray-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    
+    /* Food first — full-width wall under nav */
+    .most-ordered {
+      padding: var(--space-section) 0;
+      background: var(--cream);
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .food-front {
+      padding: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .food-front-bar {
+      background: var(--charcoal);
+      color: #fff;
+      text-align: center;
+      padding: 1.1rem 1rem 1.25rem;
+    }
+    .food-front-kicker {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #f87171;
+      margin-bottom: 0.35rem;
+    }
+    .food-front-title {
+      font-size: clamp(1.2rem, 3.2vw, 1.85rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin: 0;
+      padding: 0;
+      border: none;
+      color: #fff;
+    }
+    .food-mosaic-wrap {
+      padding-top: 1rem;
+      padding-bottom: 2rem;
+    }
+    .order-grid.food-mosaic {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      margin: 0;
+    }
+    .food-mosaic .order-card {
+      border: none;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: none;
+    }
+    .food-mosaic .order-card:hover {
+      outline: 2px solid var(--dd-red);
+      outline-offset: -2px;
+      z-index: 1;
+      position: relative;
+    }
+    .food-mosaic .order-card-img {
+      height: clamp(130px, 16vw, 200px);
+      object-fit: cover;
+    }
+    .food-mosaic .order-card-content {
+      padding: 0.55rem 0.5rem 0.65rem;
+      background: var(--white);
+    }
+    .food-mosaic .order-card .badge {
+      font-size: 0.65rem;
+      margin-bottom: 0.2rem;
+    }
+    .food-mosaic .order-card h3 {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+      line-height: 1.25;
+      text-transform: capitalize;
+    }
+    .food-mosaic .order-card .dish-tagline {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: var(--gray-muted);
+      margin-bottom: 0.25rem;
+      line-height: 1.3;
+    }
+    .food-mosaic .order-card .meta { font-size: 0.75rem; }
+    .food-front-note {
+      margin: 1.35rem auto 0;
+      max-width: 38rem;
+      text-align: center;
+      font-size: var(--text-sm);
+      color: var(--gray-muted);
+      line-height: 1.55;
+    }
+    .food-front-links {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: var(--text-sm);
+      font-weight: 600;
+    }
+    .food-front-links a {
+      color: var(--dd-red);
+      text-decoration: none;
+    }
+    .food-front-links a:hover { text-decoration: underline; }
+    .food-front-links a[href="#catering"] { color: var(--charcoal); }
+    .food-front-dot { margin: 0 0.35rem; color: #94a3b8; font-weight: 400; }
+    .section-label {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dd-red);
+      margin-bottom: 0.5rem;
+    }
+    .section-header { margin-bottom: 2rem; max-width: 40rem; }
+    .section-header h2 {
+      font-size: var(--text-3xl);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: var(--charcoal);
+      border-left: 4px solid var(--dd-red);
+      padding-left: 1rem;
+    }
+    .section-header p { font-size: var(--text-sm); color: var(--gray-muted); line-height: 1.6; }
+    .order-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem 1.25rem;
+    }
+    .order-card {
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .order-card:hover {
+      box-shadow: 0 12px 40px rgba(15,23,42,0.08);
+      border-color: #cbd5e1;
+    }
+    .order-card a { text-decoration: none; color: inherit; display: block; }
+    .order-card-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+    .order-card-content { padding: 1.75rem; }
+    .order-card .badge { font-size: var(--text-xs); color: var(--dd-red); font-weight: 600; margin-bottom: 0.35rem; }
+    .order-card h3 { font-size: var(--text-xl); margin-bottom: 0.25rem; line-height: 1.3; }
+    .order-card .dish-tagline { font-size: var(--text-xs); color: var(--gray-muted); font-weight: 600; margin-bottom: 0.35rem; }
+    .order-card .desc { font-size: var(--text-base); color: var(--gray-muted); margin-bottom: 0.5rem; line-height: 1.45; }
+    .order-card .meta { font-size: var(--text-sm); color: var(--gray-muted); }
+    .order-card .price { font-weight: 600; color: var(--charcoal); }
+    
+    /* Intro */
+    .intro {
+      padding: var(--space-section) 0;
+      background: var(--cream);
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .intro .container { max-width: 720px; }
+    .intro h2 {
+      font-size: var(--text-3xl);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--dd-red);
+      padding-left: 1rem;
+    }
+    .intro p { font-size: var(--text-sm); color: var(--gray-muted); line-height: 1.65; margin-bottom: 1rem; }
+    .intro a { color: var(--dd-red); font-weight: 600; font-size: var(--text-sm); text-decoration: none; }
+    .intro a:hover { text-decoration: underline; }
+    
+    /* Packages */
+    .packages { padding: var(--space-section) 0; background: var(--white); border-bottom: 1px solid var(--gray-border); }
+    .packages .section-header { margin-bottom: 2rem; }
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .package {
+      border: 1px solid var(--gray-border);
+      border-radius: 8px;
+      padding: 1.5rem 1.5rem 1.35rem;
+      background: var(--cream);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .package:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 8px 24px rgba(15,23,42,0.06);
+    }
+    .package h3 { font-size: var(--text-lg); font-weight: 700; color: var(--charcoal); margin-bottom: 0.35rem; }
+    .package .package-tagline { font-size: var(--text-xs); color: var(--dd-red); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+    .package .for { font-size: var(--text-sm); color: var(--gray-muted); margin-bottom: 0.75rem; }
+    .package ul { list-style: none; font-size: var(--text-sm); }
+    .package li { padding: 0.3rem 0; padding-left: 1.15rem; position: relative; font-size: var(--text-sm); }
+    .package li::before { content: "✓"; position: absolute; left: 0; color: var(--dd-red); font-weight: 600; }
+    .package .price { font-weight: 600; color: var(--charcoal); margin-top: 0.75rem; font-size: var(--text-sm); line-height: 1.5; }
+    .package .min { font-size: var(--text-xs); color: var(--gray-muted); margin-top: 0.25rem; }
+    
+    /* Protocol table */
+    .protocols { padding: var(--space-section) 0; background: var(--cream); border-bottom: 1px solid var(--gray-border); }
+    .protocols .section-header { margin-bottom: 1.5rem; }
+    .protocol-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--gray-border);
+    }
+    .protocol-table th, .protocol-table td { padding: 0.875rem 1rem; text-align: left; border-bottom: 1px solid var(--gray-border); font-size: var(--text-sm); }
+    .protocol-table th { background: var(--charcoal); color: white; font-weight: 700; font-size: var(--text-xs); letter-spacing: 0.04em; text-transform: uppercase; }
+    .protocol-table tr:last-child td { border-bottom: none; }
+    .protocol-table tr:nth-child(even) { background: #f8fafc; }
+    
+    /* Quote form */
+    .quote { padding: var(--space-section) 0; background: var(--white); border-bottom: 1px solid var(--gray-border); }
+    .quote .section-header { margin-bottom: 2rem; max-width: 36rem; margin-left: auto; margin-right: auto; text-align: center; }
+    .quote .section-header h2 { border-left: none; padding-left: 0; }
+    .quote .section-header p { margin-top: 0.5rem; }
+    .quote-form {
+      max-width: 520px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .quote-form input, .quote-form select, .quote-form textarea {
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--gray-border);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: var(--text-sm);
+    }
+    .quote-form textarea { min-height: 100px; resize: vertical; }
+    .quote-form button {
+      padding: 0.875rem 1.5rem;
+      background: var(--charcoal);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .quote-form button:hover { background: var(--charcoal-soft); }
+    
+    /* Footer */
+    footer {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.88);
+      padding: 2.75rem 0;
+      text-align: center;
+    }
+    footer a { color: #f87171; text-decoration: none; font-weight: 500; }
+    footer a:hover { text-decoration: underline; }
+    .footer-tagline { font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; color: rgba(255,255,255,0.45); }
+    footer .contact { font-size: var(--text-xl); margin-bottom: 0.5rem; font-weight: 600; }
+    footer .address { font-size: var(--text-lg); opacity: 0.9; }
+    footer .hours { font-size: var(--text-sm); opacity: 0.8; margin-top: 0.5rem; }
+    
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero h1 { max-width: none; }
+      .who-grid { grid-template-columns: 1fr; }
+      .diff-rows { grid-template-columns: 1fr; }
+      .diff-col { border-right: none; border-bottom: 1px solid var(--gray-border); }
+      .diff-col:last-child { border-bottom: none; }
+      .trust-badges { flex-direction: column; }
+      .badge-item { border-right: none; border-bottom: 1px solid var(--gray-border); }
+      .badge-item:last-child { border-bottom: none; }
+    }
+    @media (max-width: 1100px) {
+      .order-grid.food-mosaic { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 720px) {
+      .order-grid.food-mosaic { grid-template-columns: repeat(2, 1fr); }
+      .food-mosaic .order-card-img { height: clamp(120px, 38vw, 180px); }
+    }
+    @media (max-width: 768px) {
+      :root { --space-section: 3.25rem; }
+      .hero-stats { grid-template-columns: 1fr; }
+      .order-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .order-grid.food-mosaic { grid-template-columns: 1fr; }
+      .food-mosaic .order-card-img { height: 200px; }
+      .order-card-img { height: 260px; }
+      .package-grid { grid-template-columns: 1fr; }
+      .protocol-table th:nth-child(3), .protocol-table td:nth-child(3),
+      .protocol-table th:nth-child(4), .protocol-table td:nth-child(4) { display: none; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 1.25rem; }
+      .hero-ctas { flex-direction: column; align-items: stretch; }
+      .hero .cta-primary, .hero .cta-secondary { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <div class="container">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.jpg" alt="Falafel Corner — Mediterranean Grill">
+      </a>
+      <div class="nav-links">
+        <a href="#food">Plates</a>
+        <a href="brochures/">Brochures</a>
+        <a href="menus.html">Nutrition guide</a>
+        <a href="#packages">Programs</a>
+        <a href="#quote">Request quote</a>
+        <a href="https://custom.order.online/en-US/store/falafel-corner-sacramento-30889369" target="_blank" rel="noopener" class="order-btn">Order online</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="most-ordered food-first food-front" id="food">
+    <div class="food-front-bar">
+      <div class="container">
+        <p class="food-front-kicker">Marconi Ave · halal Mediterranean</p>
+        <h2 class="food-front-title">The food—every plate we show is on the menu.</h2>
+      </div>
+    </div>
+    <div class="container food-mosaic-wrap">
+      <div class="order-grid food-mosaic">
+        <div class="order-card">
+          <a href="https://custom.order.online/en-US/store/falafel-corner-sacramento-30889369" target="_blank" rel="noopener">
+            <img src="images/chicken-platter.jpg" alt="Chicken platter with rice, salad, and sauces" class="order-card-img" loading="eager" fetchpriority="high" width="560" height="280">
+            <div class="order-card-content">
+              <span class="badge">Signature plate</span>
+              <h3>Chicken platter</h3>
+              <p class="dish-tagline">Full spread · halal flame-grilled chicken</p>
+              <p class="meta"><span class="price">$21.58</span></p>
+            </div>
+          </a>
+        </div>
+        <div class="order-card">
+          <a href="https://custom.order.online/en-US/store/falafel-corner-sacramento-30889369" target="_blank" rel="noopener">
+            <img src="images/combo-platter.jpg" alt="Combo chicken and gyro platter" class="order-card-img" loading="eager" fetchpriority="high" width="560" height="280">
+            <div class="order-card-content">
+              <span class="badge">Signature plate</span>
+              <h3>Combo platter</h3>
+              <p class="dish-tagline">Chicken + gyro · one tray</p>
+              <p class="meta"><span class="price">$22.78</span></p>
+            </div>
+          </a>
+        </div>
+        <div class="order-card">
+          <a href="https://custom.order.online/en-US/store/falafel-corner-sacramento-30889369" target="_blank" rel="noopener">
+            <img src="images/gyro-platter.jpg" alt="Gyro platter with rice and Mediterranean sides" class="order-card-img" loading="lazy" width="560" height="280">
+            <div class="order-card-content">
+              <span class="badge">Signature plate</span>
+              <h3>Gyro platter</h3>
+              <p class="dish-tagline">Beef gyro · classic plate</p>
+              <p class="meta"><span class="price">$21.58</span></p>
+            </div>
+          </a>
+        </div>
+        <div class="order-card">
+          <a href="https://custom.order.online/en-US/store/falafel-corner-sacramento-30889369" target="_blank" rel="noopener">
+            <img src="images/falafel-platter.jpg" alt="Falafel platter with rice and salad" class="order-card-img" loading="lazy" width="560" height="280">
+            <div class="order-card-content">
+              <span class="badge">Signature plate</span>
+              <h3>Falafel platter</h3>
+              <p class="dish-tagline">House falafel · vegetarian</p>
+              <p class="meta"><span class="price">$20.38</span></p>
+            </div>
+          </a>
+        </div>
+        <div class="order-card">
+          <a href="https://custom.order.online/en-US/store/falafel-corner-sacramento-30889369" target="_blank" rel="noopener">
+            <img src="images/chicken-rice-bowl.jpg" alt="Chicken rice bowl" class="order-card-img" loading="lazy" width="560" height="280">
+            <div class="order-card-content">
+              <h3>Chicken rice bowl</h3>
+              <p class="dish-tagline">High protein · portable</p>
+              <p class="meta"><span class="price">$14.38</span></p>
+            </div>
+          </a>
+        </div>
+        <div class="order-card">
+          <a href="https://custom.order.online/en-US/store/falafel-corner-sacramento-30889369" target="_blank" rel="noopener">
+            <img src="images/gyro-rice-bowl.jpg" alt="Gyro rice bowl" class="order-card-img" loading="lazy" width="560" height="280">
+            <div class="order-card-content">
+              <h3>Gyro rice bowl</h3>
+              <p class="dish-tagline">Beef gyro over rice</p>
+              <p class="meta"><span class="price">$14.38</span></p>
+            </div>
+          </a>
+        </div>
+        <div class="order-card">
+          <a href="https://custom.order.online/en-US/store/falafel-corner-sacramento-30889369" target="_blank" rel="noopener">
+            <img src="images/falafel-rice-bowl.jpg" alt="Falafel rice bowl" class="order-card-img" loading="lazy" width="560" height="280">
+            <div class="order-card-content">
+              <h3>Falafel rice bowl</h3>
+              <p class="dish-tagline">Plant-based bowl</p>
+              <p class="meta"><span class="price">$13.73</span></p>
+            </div>
+          </a>
+        </div>
+        <div class="order-card">
+          <a href="https://custom.order.online/en-US/store/falafel-corner-sacramento-30889369" target="_blank" rel="noopener">
+            <img src="images/combo-platter.jpg" alt="Combo rice bowl chicken and gyro" class="order-card-img" loading="lazy" width="560" height="280">
+            <div class="order-card-content">
+              <h3>Combo rice bowl</h3>
+              <p class="dish-tagline">Dual protein</p>
+              <p class="meta"><span class="price">$18.73</span></p>
+            </div>
+          </a>
+        </div>
+        <div class="order-card">
+          <a href="https://custom.order.online/en-US/store/falafel-corner-sacramento-30889369" target="_blank" rel="noopener">
+            <img src="images/gyro-wrap.jpg" alt="Gyro wrap in pita" class="order-card-img" loading="lazy" width="560" height="280">
+            <div class="order-card-content">
+              <span class="badge">#1 rated</span>
+              <h3>Gyro wrap</h3>
+              <p class="dish-tagline">Lamb & beef · handheld</p>
+              <p class="meta"><span class="price">$16.78</span></p>
+            </div>
+          </a>
+        </div>
+        <div class="order-card">
+          <a href="https://custom.order.online/en-US/store/falafel-corner-sacramento-30889369" target="_blank" rel="noopener">
+            <img src="images/chicken-shawarma-wrap.jpg" alt="Chicken shawarma wrap" class="order-card-img" loading="lazy" width="560" height="280">
+            <div class="order-card-content">
+              <h3>Chicken shawarma wrap</h3>
+              <p class="dish-tagline">Flame-grilled halal chicken</p>
+              <p class="meta"><span class="price">$16.78</span></p>
+            </div>
+          </a>
+        </div>
+        <div class="order-card">
+          <a href="https://custom.order.online/en-US/store/falafel-corner-sacramento-30889369" target="_blank" rel="noopener">
+            <img src="images/falafel-wrap.jpg" alt="Falafel wrap" class="order-card-img" loading="lazy" width="560" height="280">
+            <div class="order-card-content">
+              <h3>Falafel wrap</h3>
+              <p class="dish-tagline">Vegetarian handheld</p>
+              <p class="meta"><span class="price">$15.58</span></p>
+            </div>
+          </a>
+        </div>
+        <div class="order-card">
+          <a href="https://custom.order.online/en-US/store/falafel-corner-sacramento-30889369" target="_blank" rel="noopener">
+            <img src="images/loaded-fries.jpg" alt="Loaded Mediterranean fries" class="order-card-img" loading="lazy" width="560" height="280">
+            <div class="order-card-content">
+              <h3>Loaded chicken fries</h3>
+              <p class="dish-tagline">Tray favorite · indulgent</p>
+              <p class="meta"><span class="price">$21.53</span></p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <p class="food-front-note">Same line we use for group catering. À la carte from this store; <strong>Fuel Program on this site is Marconi flagship only.</strong> Scroll down for programs &amp; quotes—or tap any photo to order.</p>
+      <p class="food-front-links">
+        <a href="https://custom.order.online/en-US/store/falafel-corner-sacramento-30889369" target="_blank" rel="noopener">Full menu &amp; pricing →</a>
+        <span class="food-front-dot">·</span>
+        <a href="menus.html">Nutrition guide →</a>
+        <span class="food-front-dot">·</span>
+        <a href="#catering">Fuel Program details ↓</a>
+      </p>
+    </div>
+  </section>
+
+  <header class="hero" id="catering">
+    <div class="container hero-grid">
+      <div class="hero-main">
+        <p class="hero-eyebrow">B2B catering · Sacramento</p>
+        <h1>Halal Mediterranean catering built for volume.</h1>
+        <p class="hero-lead">Falafel Corner Marconi—the flagship for this Fuel Program—supplies Sacramento-area organizations with consistent, labeled meals: healthcare, fitness, corporate, and education. Same menu family as our 18 California locations; <strong>group catering and quotes on this site are for this Marconi kitchen only.</strong></p>
+        <ul class="hero-checks">
+          <li>100% halal · backed by an 18-location California brand</li>
+          <li>Fuel Program &amp; B2B catering: Marconi Ave flagship — local pickup &amp; delivery</li>
+          <li>Individual packaging, allergen labels, macros on request · typical lead time 24–48 hours</li>
+        </ul>
+        <div class="hero-ctas">
+          <a href="#quote" class="cta-primary">Request a catering quote</a>
+          <a href="https://custom.order.online/en-US/store/falafel-corner-sacramento-30889369" target="_blank" rel="noopener" class="cta-secondary">Order à la carte</a>
+          <a href="#food" class="cta-text">Back to all plates ↑</a>
+          <a href="menus.html" class="cta-text">Nutrition guide →</a>
+        </div>
+      </div>
+      <aside class="hero-aside" aria-label="Location and hours">
+        <div class="hero-card">
+          <h2>Flagship location</h2>
+          <p class="hero-card-title">Marconi Avenue</p>
+          <p>4245 Marconi Ave Ste 104<br>Sacramento, CA 95821</p>
+          <p class="hero-hours">Open daily · 11:00 a.m. – 8:40 p.m.</p>
+          <div class="hero-card-links">
+            <a href="tel:+19169936732">(916) 993-6732</a>
+            <a href="mailto:info@fcorner.com">info@fcorner.com</a>
+          </div>
+        </div>
+        <ul class="hero-stats">
+          <li><strong>18</strong><span>Brand locations in CA</span></li>
+          <li><strong>100%</strong><span>Halal</span></li>
+          <li><strong>1</strong><span>Fuel Program flagship</span></li>
+        </ul>
+      </aside>
+    </div>
+  </header>
+
+  <section class="who-section">
+    <div class="container who-grid">
+      <div>
+        <p class="who-kicker">Operational reliability</p>
+        <h2 class="who-headline">Restaurant quality. Procurement-ready execution.</h2>
+        <p class="who-body">The Fuel Program is the same Falafel Corner menu your guests already know—executed for groups out of <strong>4245 Marconi Ave</strong>. Flame-grilled halal proteins, house-made falafel, and sides portioned for teams, not guesswork.</p>
+        <p class="who-body">This program is built for <strong>local B2B around Marconi</strong>: one accountable kitchen, one quote path, one relationship. Falafel Corner operates 18 locations in California, but <strong>catering and Fuel Program outreach on this site are Marconi-only</strong> for the Sacramento area.</p>
+        <p class="who-body">We serve organizations that need repeatability: medical campuses, gyms, dealerships, district staff, and corporate HQs. Dietary callouts, consistent labeling, and straightforward per-person pricing.</p>
+        <p class="who-audiences">Local B2B partner: Marconi Ave · Brand you already know statewide.</p>
+      </div>
+      <div>
+        <div class="diff-table-wrap">
+          <h3>Ordering models</h3>
+          <div class="diff-rows">
+            <div class="diff-col">
+              <h4>À la carte (retail)</h4>
+              <p>Single orders online or in-store. Bowls, platters, and wraps for individuals. Standard menu pricing. Ideal for employees ordering on their own.</p>
+            </div>
+            <div class="diff-col">
+              <h4>Fuel Program (catering)</h4>
+              <p>Group orders from 15+ guests, fulfilled from <strong>Marconi Ave only</strong> for this program. Boxed or tray service, labels and macros on request, volume tiers. Submit a quote with date, headcount, and delivery address in the Sacramento area.</p>
+            </div>
+          </div>
+        </div>
+        <div class="trust-badges">
+          <div class="badge-item">
+            <span class="badge-number">18</span>
+            <span class="badge-label">Brand: CA locations</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-number">100%</span>
+            <span class="badge-label">Halal</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-number">0</span>
+            <span class="badge-label">Contract shortcuts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="container">
+      <p class="section-label">Nutrition transparency</p>
+      <h2>Macro-forward options for wellness and performance buyers.</h2>
+      <p>We publish estimated calories and macros for core menu items so benefits coordinators, coaches, and clinic admins can plan with confidence. Values are estimates; confirm modifiers with the kitchen when ordering.</p>
+      <a href="menus.html">Open nutrition guide →</a>
+    </div>
+  </section>
+
+  <section class="packages" id="packages">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Volume programs</p>
+        <h2>Six catering programs by segment</h2>
+        <p>Each package maps to a buyer profile and minimum headcount. All tiers are quoted and produced from <strong>Marconi Ave</strong>. Pricing shown is per person unless noted; confirm availability and delivery with your quote.</p>
+      </div>
+      <div class="package-grid">
+        <div class="package">
+          <h3>Clinic Fuel</h3>
+          <p class="package-tagline">No 2 PM crash. Labelled. Ready.</p>
+          <p class="for">Medical offices • Kaiser • Mercy • Dental clinics • Quest</p>
+          <ul>
+            <li>Individually boxed platters or trays</li>
+            <li>Allergen labels • Macros on request</li>
+            <li>Halal • High-fiber • Low-glycemic</li>
+          </ul>
+          <p class="price">$13.99/person (20 min) • $12.49 (50+) • $11.99 (100+)</p>
+          <p class="min">Minimum 20 people • First order 20% off</p>
+        </div>
+        <div class="package">
+          <h3>Gym Recovery</h3>
+          <p class="package-tagline">50g+ protein. Zero bloat. Post-workout fuel.</p>
+          <p class="for">Gyms • CrossFit New Heights • MMA • Fitness studios</p>
+          <ul>
+            <li>Chicken & gyro rice bowls + platters</li>
+            <li>50g+ protein options • Zero bloat</li>
+          </ul>
+          <p class="price">$14.99/person (15 min) • $13.49 (30+)</p>
+          <p class="min">Minimum 15 people</p>
+        </div>
+        <div class="package">
+          <h3>Heritage Family Pack</h3>
+          <p class="package-tagline">Feed 6–8. Authentic. Ready in 20.</p>
+          <p class="for">Families • Slavic/ME • Weekend no-cook</p>
+          <ul>
+            <li>Feeds 6–8 people</li>
+            <li>2 Chicken + 1 Falafel Platter, hummus, pita</li>
+            <li>Authentic • Halal • Ready in 20 min</li>
+          </ul>
+          <p class="price">$75–85 pack</p>
+        </div>
+        <div class="package">
+          <h3>Saturday Sales Fuel</h3>
+          <p class="package-tagline">Keep the floor energized. Recurring Saturdays.</p>
+          <p class="for">Auto dealerships • Niello • Lexus • Fulton Ave</p>
+          <ul>
+            <li>Loaded fries trays + platters</li>
+            <li>Recurring Saturday delivery available</li>
+          </ul>
+          <p class="price">$15–18/person</p>
+        </div>
+        <div class="package">
+          <h3>Office Protocol</h3>
+          <p class="package-tagline">One order works for everyone. Halal. Vegetarian. Labeled.</p>
+          <p class="for">Corporate • Insurance • Government</p>
+          <ul>
+            <li>Platters + Greek Fries bar + wraps</li>
+            <li>Halal • Vegetarian • Labeled</li>
+          </ul>
+          <p class="price">$13.99/person (20 min) • $12.49 (50+)</p>
+        </div>
+        <div class="package">
+          <h3>Student/Staff</h3>
+          <p class="package-tagline">Halal. Vegetarian. Nut-free friendly.</p>
+          <p class="for">Marconi Learning Academy • Staff events • Sports • PTA</p>
+          <ul>
+            <li>Chicken Platter, Falafel Platter, Gyro Wrap, Greek Fries</li>
+            <li>Halal • Vegetarian • Nut-free friendly</li>
+          </ul>
+          <p class="price">$10.99/student (25 min) • $9.99 (50+)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="protocols">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Menu mapping</p>
+        <h2>Goals → orders (quick reference)</h2>
+        <p>Use this table when briefing your team or building a recurring order. Modifications subject to kitchen confirmation.</p>
+      </div>
+      <table class="protocol-table">
+        <thead>
+          <tr>
+            <th>Goal</th>
+            <th>Order This</th>
+            <th>Modification</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Muscle gain</td>
+            <td>Recovery Platter</td>
+            <td>Chicken Platter + Side of Chicken</td>
+            <td>50g+ protein</td>
+          </tr>
+          <tr>
+            <td>Fat loss</td>
+            <td>Hypertrophy Bowl</td>
+            <td>Chicken Rice Bowl, double salad</td>
+            <td>High protein, low bloat</td>
+          </tr>
+          <tr>
+            <td>Steady energy</td>
+            <td>Sustained Energy</td>
+            <td>Combo Platter, sauce on side</td>
+            <td>No 2 PM crash</td>
+          </tr>
+          <tr>
+            <td>Family meal</td>
+            <td>Heritage Pack</td>
+            <td>2 Chicken + 1 Falafel Platter</td>
+            <td>Feeds 6–8</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="quote" id="quote">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Next step</p>
+        <h2>Request a catering quote</h2>
+        <p>Quotes are handled by the <strong>Marconi Ave flagship</strong>. Typical lead time: 24–48 hours. Include headcount, date, dietary requirements, and delivery address in the Sacramento area. We respond by phone or email.</p>
+      </div>
+      <form class="quote-form" id="quoteForm">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="phone" placeholder="Phone">
+        <select name="package">
+          <option value="">Select a package</option>
+          <option value="clinic">Clinic Fuel</option>
+          <option value="gym">Gym Recovery</option>
+          <option value="family">Heritage Family Pack</option>
+          <option value="auto">Saturday Sales Fuel</option>
+          <option value="office">Office Protocol</option>
+          <option value="student">Student/Staff</option>
+        </select>
+        <input type="number" name="headcount" placeholder="Approx. headcount" min="1">
+        <input type="date" name="date" placeholder="Date needed">
+        <textarea name="message" placeholder="Details (dietary needs, delivery address, etc.)"></textarea>
+        <button type="submit">Submit quote request</button>
+      </form>
+      <p style="text-align: center; margin-top: 1.25rem; font-size: var(--text-sm); color: var(--gray-muted);">Prefer phone? <a href="tel:+19169936732" style="color: var(--dd-red); font-weight: 600;">(916) 993-6732</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p class="footer-tagline">Falafel Corner · Fuel Program</p>
+      <p class="contact"><a href="tel:+19169936732">(916) 993-6732</a></p>
+      <p class="address">4245 Marconi Ave Ste 104, Sacramento CA 95821</p>
+      <p class="hours">11:00 am – 8:40 pm</p>
+      <p class="address" style="margin-top: 1rem;">
+        <a href="https://custom.order.online/en-US/store/falafel-corner-sacramento-30889369" target="_blank" rel="noopener">See the Menu →</a>
+        &nbsp;·&nbsp;
+        <a href="brochures/">Print brochures (schools, corporate, medical, dental, gyms)</a>
+      </p>
+    </div>
+  </footer>
+  <script>
+    const FUEL_EMAIL = 'info@fcorner.com';
+    document.getElementById('quoteForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const subject = 'Fuel Program Quote Request';
+      const body = `Name: ${form.name.value}\nEmail: ${form.email.value}\nPhone: ${form.phone.value}\nPackage: ${form.package.value}\nHeadcount: ${form.headcount.value}\nDate: ${form.date.value}\n\n${form.message.value}`;
+      window.location.href = `mailto:${FUEL_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  </script>
+</body>
+</html>

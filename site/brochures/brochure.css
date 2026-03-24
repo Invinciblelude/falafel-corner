@@ -1,0 +1,334 @@
+/* Fuel Program — print-ready brochures (Letter, one sheet) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+:root {
+  --fc-red: #FF3008;
+  --fc-ink: #0f172a;
+  --fc-muted: #475569;
+  --fc-line: #e2e8f0;
+  --fc-cream: #f8fafc;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 11pt; }
+
+body {
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--fc-ink);
+  line-height: 1.45;
+  background: #e2e8f0;
+  padding: 1rem;
+}
+
+.sheet {
+  max-width: 8.5in;
+  min-height: 10.5in;
+  margin: 0 auto;
+  background: #fff;
+  padding: 0.55in 0.6in;
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.12);
+}
+
+.audience-bar {
+  display: inline-block;
+  background: var(--fc-red);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 0.65rem;
+}
+
+.head-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--fc-red);
+  margin-bottom: 0.85rem;
+}
+
+.head-row img { height: 48px; width: auto; object-fit: contain; }
+.head-meta { text-align: right; font-size: 0.7rem; color: var(--fc-muted); line-height: 1.4; }
+
+h1 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+  max-width: 95%;
+}
+
+.deck {
+  font-size: 0.85rem;
+  color: var(--fc-muted);
+  margin-bottom: 0.5rem;
+  max-width: 95%;
+}
+
+/* Appetite-forward food photography */
+.food-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+  margin: 0.55rem 0 0.85rem;
+}
+
+.food-strip figure {
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.14);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: #fff;
+}
+
+.food-strip img {
+  width: 100%;
+  height: 88px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.food-strip figcaption {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-align: center;
+  padding: 0.28rem 0.2rem 0.32rem;
+  background: linear-gradient(180deg, #fff8f5 0%, var(--fc-cream) 100%);
+  color: var(--fc-ink);
+  border-top: 1px solid var(--fc-line);
+}
+
+@media (max-width: 640px) {
+  .food-strip { grid-template-columns: repeat(2, 1fr); }
+  .food-strip img { height: 100px; }
+}
+
+.hub-food {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.45rem;
+  margin: 0 0 1.35rem;
+}
+
+.hub-food figure {
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);
+  border: 1px solid var(--fc-line);
+}
+
+.hub-food img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  display: block;
+}
+
+.hub-food figcaption {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.35rem 0.3rem;
+  background: var(--fc-cream);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1rem;
+  margin-top: 0.65rem;
+}
+
+@media (max-width: 640px) {
+  .columns { grid-template-columns: 1fr; }
+  body { padding: 0; }
+  .sheet { box-shadow: none; min-height: auto; }
+}
+
+.panel {
+  background: var(--fc-cream);
+  border: 1px solid var(--fc-line);
+  border-radius: 6px;
+  padding: 0.6rem 0.65rem;
+}
+
+.panel h2 {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fc-red);
+  margin-bottom: 0.4rem;
+}
+
+.panel ul {
+  list-style: none;
+  font-size: 0.8rem;
+}
+
+.panel li {
+  padding: 0.2rem 0 0.2rem 0.85rem;
+  position: relative;
+}
+
+.panel li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--fc-red);
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.plates {
+  margin-top: 0.65rem;
+}
+
+.plates h2 {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fc-ink);
+  margin-bottom: 0.35rem;
+}
+
+.plate-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.35rem;
+  font-size: 0.68rem;
+}
+
+.plate-grid span {
+  background: #fff;
+  border: 1px solid var(--fc-line);
+  border-radius: 4px;
+  padding: 0.35rem 0.4rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .plate-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.promo-loyalty {
+  margin-top: 0.65rem;
+  padding: 0.55rem 0.65rem 0.6rem;
+  background: linear-gradient(135deg, #fff5f2 0%, #ffe8e0 50%, #fff8f5 100%);
+  border: 2px dashed var(--fc-red);
+  border-radius: 8px;
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.promo-loyalty h2 {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fc-red);
+  margin-bottom: 0.4rem;
+}
+
+.promo-loyalty ol {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--fc-ink);
+}
+
+.promo-loyalty li {
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+}
+
+.promo-loyalty li strong { color: var(--fc-red); }
+
+.promo-loyalty .promo-fine {
+  margin-top: 0.45rem;
+  font-size: 0.58rem;
+  font-weight: 500;
+  color: var(--fc-muted);
+  line-height: 1.35;
+}
+
+.price-block {
+  margin-top: 0.65rem;
+  padding: 0.55rem 0.65rem;
+  background: var(--fc-ink);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.78rem;
+}
+
+.price-block strong { color: #fca5a5; }
+
+.cta {
+  margin-top: 0.65rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.cta a {
+  color: var(--fc-red);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cta .tel {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--fc-ink);
+  margin: 0.25rem 0;
+}
+
+.footnote {
+  margin-top: 0.5rem;
+  font-size: 0.62rem;
+  color: var(--fc-muted);
+  line-height: 1.35;
+}
+
+.back-link {
+  max-width: 8.5in;
+  margin: 0.75rem auto 0;
+  font-size: 0.75rem;
+}
+
+.back-link a { color: var(--fc-red); font-weight: 600; }
+
+/* Print */
+@page { size: letter; margin: 0.4in; }
+
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .sheet {
+    box-shadow: none;
+    max-width: none;
+    min-height: auto;
+    padding: 0;
+  }
+  .food-strip img {
+    height: 0.95in;
+    max-height: 0.95in;
+  }
+  .back-link, .no-print { display: none !important; }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <radialGradient id="flameGrad" cx="50%" cy="60%" r="50%">
+      <stop offset="0%" stop-color="#FF6B4A" stop-opacity="0.5"/>
+      <stop offset="40%" stop-color="#FF3008" stop-opacity="0.3"/>
+      <stop offset="80%" stop-color="#FF3008" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#FF3008" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Inner glow -->
+    <radialGradient id="flameInner" cx="50%" cy="55%" r="30%">
+      <stop offset="0%" stop-color="#FF3008" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FF3008" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="150" cy="150" rx="120" ry="130" fill="url(#flameGrad)"/>
+  <ellipse cx="150" cy="140" rx="70" ry="90" fill="url(#flameInner)"/>
+</svg>

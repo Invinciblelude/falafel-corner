@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <defs>
+    <linearGradient id="f1" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#FF3008" stop-opacity="0"/>
+      <stop offset="55%" stop-color="#FF3008" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ff8a5c" stop-opacity="0.14"/>
+    </linearGradient>
+    <linearGradient id="f2" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#d91400" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ff6b4a" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ffb347" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <!-- Tile base -->
+  <rect width="320" height="320" fill="#fff5f0"/>
+  <!-- Flame plumes (abstract) -->
+  <g opacity="1">
+    <path d="M40 280 Q55 200 48 140 Q42 100 60 85 Q78 120 72 165 Q68 220 40 280" fill="url(#f1)"/>
+    <path d="M280 300 Q265 210 275 150 Q282 95 255 75 Q238 115 245 175 Q252 235 280 300" fill="url(#f2)"/>
+    <path d="M160 310 Q145 240 155 190 Q165 145 150 120 Q130 155 138 210 Q145 265 160 310" fill="url(#f1)"/>
+    <ellipse cx="300" cy="48" rx="38" ry="52" fill="#FF3008" opacity="0.08"/>
+    <ellipse cx="24" cy="56" rx="32" ry="44" fill="#ff6b4a" opacity="0.07"/>
+  </g>
+  <!-- Gym: barbell hint -->
+  <g stroke="#FF3008" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.07">
+    <line x1="88" y1="52" x2="132" y2="52"/>
+    <line x1="88" y1="48" x2="88" y2="56"/>
+    <line x1="132" y1="48" x2="132" y2="56"/>
+  </g>
+  <!-- Medical: cross -->
+  <g stroke="#d91400" stroke-width="2.2" stroke-linecap="round" opacity="0.065">
+    <line x1="248" y1="228" x2="248" y2="248"/>
+    <line x1="238" y1="238" x2="258" y2="238"/>
+  </g>
+  <!-- Kids / joy: small heart -->
+  <path d="M196 102c-8-8-20-2-20 8 0 14 20 24 20 24s20-10 20-24c0-10-12-16-20-8z" fill="#FF3008" opacity="0.055"/>
+  <!-- Extra spark / energy -->
+  <g fill="#ffb347" opacity="0.09">
+    <circle cx="200" cy="180" r="3"/>
+    <circle cx="118" cy="268" r="2.5"/>
+    <circle cx="52" cy="198" r="2"/>
+  </g>
+</svg>
