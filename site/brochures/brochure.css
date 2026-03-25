@@ -298,12 +298,31 @@ h1 {
 }
 
 .promo-tiers-label {
-  margin: 0 0 var(--promo-space);
+  margin: 0 0 0.2rem;
   font-size: 0.5rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--fc-muted);
+}
+
+.promo-tiers-scope {
+  margin: 0 0 var(--promo-space);
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--fc-ink);
+  line-height: 1.35;
+}
+
+.promo-tiers-scope strong {
+  color: var(--fc-red);
+  font-weight: 700;
+}
+
+.hub .promo-loyalty .promo-tiers-scope {
+  margin-bottom: 0.45rem;
+  font-size: 0.62rem;
+  color: var(--fc-ink);
 }
 
 .promo-tier-list {
